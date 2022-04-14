@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const useInput = (validateValue) => {
   const [enteredValue, setEnteredValue] = useState("");
-  const [isTouched, setIstTuched] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
 
   const valueIsValid = validateValue(enteredValue);
   const hasError = !valueIsValid && isTouched;
@@ -11,13 +11,13 @@ const useInput = (validateValue) => {
     setEnteredValue(event.target.value);
   };
 
-  const InputBlurHandler = (event) => {
-    setIstTuched(true);
+  const inputBlurHandler = (event) => {
+    setIsTouched(true);
   };
 
   const reset = () => {
     setEnteredValue("");
-    setIstTuched(false);
+    setIsTouched(false);
   };
 
   return {
@@ -25,7 +25,7 @@ const useInput = (validateValue) => {
     isValid: valueIsValid,
     hasError,
     valueChangeHandler,
-    InputBlurHandler,
+    inputBlurHandler,
     reset,
   };
 };
