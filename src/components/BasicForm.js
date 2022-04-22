@@ -8,14 +8,14 @@ const BasicForm = (props) => {
     value: firstNameValue,
     isValid: firstNameIsValid,
     hasError: firstNameHasError,
-    valueChangeHandler: fristNameChangeHandler,
+    valueChangeHandler: firstNameChangeHandler,
     inputBlurHandler: firstNameBlurHandler,
     reset: resetFirstName,
   } = useInput(isNotEmpty);
   const {
     value: lastNameValue,
     isValid: lastNameIsValid,
-    asError: lastNameHasError,
+    hasError: lastNameHasError,
     valueChangeHandler: lastNameChangeHandler,
     inputBlurHandler: lastNameBlurHandler,
     reset: resetLastName,
@@ -23,7 +23,7 @@ const BasicForm = (props) => {
   const {
     value: emailValue,
     isValid: emailIsValid,
-    asError: emailHasError,
+    hasError: emailHasError,
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
     reset: resetEmail,
@@ -67,7 +67,7 @@ const BasicForm = (props) => {
             type="text"
             id="name"
             value={firstNameValue}
-            onChange={fristNameChangeHandler}
+            onChange={firstNameChangeHandler}
             onBlur={firstNameBlurHandler}
           />
           {firstNameHasError && (
